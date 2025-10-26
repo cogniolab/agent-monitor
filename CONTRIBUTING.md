@@ -1,79 +1,79 @@
-# Contributing to Agent Monitor
+# Contributing to agent-monitor
 
-Thank you for considering contributing to Agent Monitor! We welcome contributions from the community.
+Thank you for your interest in contributing to agent-monitor! We're building the best observability platform for AI agents, and we need your help.
 
-## How to Contribute
-
-### Reporting Bugs
-
-If you find a bug, please open an issue on GitHub with:
-- A clear description of the issue
-- Steps to reproduce
-- Expected vs actual behavior
-- Your environment (Python version, OS, etc.)
-
-### Suggesting Features
-
-We love feature suggestions! Please open an issue with:
-- Clear description of the feature
-- Use case explaining why it's needed
-- Example of how it would work
-
-### Pull Requests
+## Getting Started
 
 1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Make your changes
-4. Add tests for new functionality
-5. Ensure all tests pass (`pytest`)
-6. Format code with Black (`black .`)
-7. Commit your changes (`git commit -m 'Add amazing feature'`)
-8. Push to your fork (`git push origin feature/amazing-feature`)
-9. Open a Pull Request
+2. Clone your fork: `git clone https://github.com/YOUR_USERNAME/agent-monitor.git`
+3. Create a feature branch: `git checkout -b feature/your-feature`
+4. Set up development environment: `pip install -e ".[dev]"`
 
-### Development Setup
+## Development Guidelines
 
-```bash
-# Clone the repository
-git clone https://github.com/cogniolab/agent-monitor.git
-cd agent-monitor
+### Code Quality
+- Follow PEP 8 style guide
+- Use type hints for all functions
+- Aim for >80% test coverage
+- Run linting: `make lint`
+- Format code: `make format`
 
-# Create virtual environment
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-
-# Install development dependencies
-pip install -e ".[dev,all]"
-
-# Run tests
-pytest
-
-# Format code
-black .
-
-# Type checking
-mypy agent_monitor
+### Commit Standards
+Write clear, descriptive commits:
+```
+feat: add histogram metrics for token usage
+fix: resolve race condition in trace aggregation
+docs: update API documentation
+test: add tests for cost calculator
 ```
 
-### Code Style
+### Pull Request Process
+1. Update tests and documentation
+2. Ensure all tests pass: `make test`
+3. Add entry to CHANGELOG.md under Unreleased
+4. Request review from maintainers
+5. Address feedback promptly
 
-- Follow PEP 8
-- Use type hints
-- Write docstrings for public APIs
-- Keep functions focused and small
-- Add tests for new features
+## Areas We Need Help
 
-### Areas We'd Love Help With
+- **Integrations**: LangChain, CrewAI, AutoGen connectors
+- **Exporters**: New backend support (Datadog, NewRelic, etc.)
+- **Documentation**: API guides, tutorials, deployment guides
+- **Performance**: Optimization for high-volume traces
+- **Instrumentation**: Framework-specific observability
 
-- Additional platform integrations (AutoGPT, LlamaIndex, etc.)
-- Dashboard improvements
-- Documentation
-- Bug fixes
-- Performance optimizations
-- Test coverage improvements
+## Testing Requirements
+
+- Unit tests for all features
+- Integration tests for agent frameworks
+- Example: `tests/exporters/test_prometheus_exporter.py`
+- Run: `pytest tests/ -v --cov=agent_monitor`
+
+## Code Review Checklist
+
+- [ ] Tests pass locally
+- [ ] Code follows project style
+- [ ] Documentation updated
+- [ ] No breaking changes (or documented)
+- [ ] Performance impact considered
+
+## Reporting Issues
+
+Include:
+- Python version and OS
+- Reproduction steps
+- Expected vs actual behavior
+- Agent framework version
+- Relevant logs/traces
+
+## License
+
+All contributions are under MIT License. By submitting PRs, you agree to these terms.
 
 ## Questions?
 
-Contact us at dev@cogniolab.com
+- Open a GitHub Discussion
+- Join our community Slack
+- Check existing issues first
 
-Thank you for contributing! 🎉
+Happy contributing!
